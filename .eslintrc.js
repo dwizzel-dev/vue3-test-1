@@ -25,6 +25,8 @@ module.exports = {
   },
   // add your custom rules here
   rules: {
+    // fix linebreak problems on windows and linux and with vscode
+    'linebreak-style': 0,
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
       js: 'never',
