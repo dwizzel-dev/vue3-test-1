@@ -10,22 +10,18 @@
 import TopNavigation from '@/components/shared/TopNavigation';
 
 export default {
-  page: {
-    title: 'About Us',
-    meta: [{
-      name: 'description',
-      content: 'about us page',
-    }],
-  },
   name: 'AboutUs',
   components: { TopNavigation },
   data() {
     return {
-      title: 'About Us',
+      meta: {
+        title: 'About Us',
+        description: 'Description About Us',
+      },
     };
   },
   created() {
-    document.title = 'About Us';
+    document.title = this.meta.title; // pass the meta via the cretion mode
   },
 };
 
