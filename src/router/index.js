@@ -14,7 +14,7 @@ const router = new Router({
       component: CompHome,
       meta: { // pass the meta via the router
         title: 'Home',
-        description: 'home page',
+        description: 'home page description',
       },
     },
     {

@@ -1,7 +1,7 @@
 <template>
   <div class="about-us">
     <top-navigation></top-navigation>
-    <h1>{{ title }}</h1>
+    <h1>{{h1}}</h1>
   </div>
 </template>
 
@@ -14,17 +14,16 @@ export default {
   components: { TopNavigation },
   data() {
     return {
+      h1: 'About Us',
       meta: {
-        title: 'About Us',
-        description: 'Description About Us',
+        title: 'Title: About Us ',
       },
     };
   },
   created() {
-    document.title = this.meta.title; // pass the meta via the cretion mode
+    document.title = this.meta.title; // pass the meta via the creation mode
   },
 };
-
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
