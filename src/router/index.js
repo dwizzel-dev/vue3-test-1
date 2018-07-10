@@ -1,17 +1,24 @@
+/**
+ * @examples: https://github.com/vuejs/vue-router/tree/dev/examples
+ */
+
 import Vue from 'vue';
-import Router from 'vue-router';
-import CompHome from '@/components/Home';
-import CompAboutUs from '@/components/AboutUs';
+import VueRouter from 'vue-router';
+import ViewHome from '@/components/views/Home';
+import ViewAboutUs from '@/components/views/AboutUs';
+import ViewUser from '@/components/views/User';
 
-Vue.use(Router);
+Vue.use(VueRouter);
 
 
-const router = new Router({
+const router = new VueRouter({
+  linkExactActiveClass: 'isExactActive', // the class to aplly when active
+  linkActiveClass: 'isActive', // the class to aplly when active and exact
   routes: [
     {
       path: '',
       name: 'Home',
-      component: CompHome,
+      component: ViewHome,
       meta: { // pass the meta via the router
         title: 'Home',
         description: 'home page description',
@@ -20,7 +27,28 @@ const router = new Router({
     {
       path: '/about-us',
       name: 'AboutUs',
-      component: CompAboutUs,
+      component: ViewAboutUs,
+    },
+    {
+      path: '/about',
+      redirect: '/about-us', // redirest by path
+    },
+    {
+      path: '/aboutus',
+      redirect: {
+        name: 'AboutUs', // redirest by route name
+      },
+    },
+    {
+      path: '/user', // with dynamic link
+      component: ViewUser,
+      children: [
+        {
+          path: ':username',
+          name: 'user',
+          component: ViewUser,
+        },
+      ],
     },
   ],
 });
