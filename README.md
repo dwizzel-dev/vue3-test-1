@@ -15,6 +15,16 @@ npm install -g @vue/cli-init
 OR
 yarn global add @vue/cli
 
+# install vuex
+npm install vuex --save
+OR
+yarn add vuex
+
+# install promise for vuex
+npm install es6-promise --save
+OR
+yarn add es6-promise
+
 # vue init now works
 vue init webpack my-new-project
 

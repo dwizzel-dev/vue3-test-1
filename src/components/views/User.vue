@@ -1,6 +1,7 @@
 <template>
   <div class="user">
     <top-navigation></top-navigation>
+    <!-- changes made via the template -->
     <h1>{{meta.title}} {{$route.params.username}}</h1>
   </div>
 </template>
@@ -14,6 +15,7 @@ export default {
   components: { TopNavigation },
   data() {
     return {
+      counter: ' (%d)',
       h1: 'Loading...',
       meta: {
         title: 'User ',
@@ -22,10 +24,12 @@ export default {
   },
   methods: {
     setPageTitle(args) {
+      this.$store.commit('increment');
+      // changes made via a property
       if (typeof this.$route.params.username !== 'undefined') {
-        document.title = this.meta.title + this.$route.params.username + args;
+        document.title = this.meta.title + this.$route.params.username + args + this.counter.replace('%d', this.$store.getters.getVisits);
       } else {
-        document.title = this.meta.title + args;
+        document.title = this.meta.title + args + this.counter.replace('%d', this.$store.getters.getVisits);
       }
     },
   },
