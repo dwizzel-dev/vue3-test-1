@@ -5,6 +5,19 @@
 ## Build Setup
 
 ``` bash
+# install command line
+npm install -g @vue/cli
+OR
+yarn global add @vue/cli
+
+# install missing libs
+npm install -g @vue/cli-init
+OR
+yarn global add @vue/cli
+
+# vue init now works
+vue init webpack my-new-project
+
 # install dependencies
 npm install
 
