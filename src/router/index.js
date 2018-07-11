@@ -7,6 +7,7 @@ import VueRouter from 'vue-router';
 import ViewHome from '@/components/views/Home';
 import ViewAboutUs from '@/components/views/AboutUs';
 import ViewUser from '@/components/views/User';
+import ViewShowMe from '@/components/views/ShowMe';
 
 Vue.use(VueRouter);
 
@@ -49,6 +50,15 @@ const router = new VueRouter({
           component: ViewUser,
         },
       ],
+    },
+    {
+      path: '/show-me',
+      name: 'ShowMe',
+      component: ViewShowMe,
+      meta: { // pass the meta via the router
+        title: 'Show Me',
+        description: 'show me page description',
+      },
     },
   ],
 });

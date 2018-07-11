@@ -5,6 +5,7 @@
         <li><router-link to="/" exact>Home</router-link></li>
         <li><router-link to="/about-us">About Us</router-link></li>
         <li><router-link to="/user">User</router-link></li>
+        <li><router-link to="/show-me">Show Me</router-link></li>
       </ul>
     </nav>
   </div>

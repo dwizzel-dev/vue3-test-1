@@ -31,11 +31,6 @@ export default {
   },
   watch: {
     // watch for some injected object like $route
-    // on state change
-    $store() {
-      // call inner method
-      this.setPageTitle('-state');
-    },
   },
 };
 </script>

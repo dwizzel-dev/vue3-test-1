@@ -11,8 +11,8 @@ const resetVisit = ({ commit }) => {
 };
 
 const addVisitAsync = ({ commit, state }, obj) => {
-  // eslint-disable-next-line
   setTimeout(() => {
+    // eslint-disable-next-line
     console.log(state);
     commit('addVisit', obj.count);
   }, 2000);
