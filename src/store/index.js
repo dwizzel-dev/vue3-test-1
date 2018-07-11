@@ -1,6 +1,7 @@
 /**
  * @examples: https://vuex.vuejs.org/guide/state.html
  *            https://github.com/vuejs/vuex/tree/dev/examples
+ *            https://github.com/vuejs/vuex/tree/dev/examples/counter-hot (observer in components)
  */
 
 // architecture approach
@@ -12,8 +13,7 @@ import Vuex from 'vuex';
 import mutations from './mutations';
 import state from './state';
 import getters from './getters';
-// with const instance approach
-import * as actions from './actions';
+import actions from './actions';
 
 Vue.use(Vuex);
 

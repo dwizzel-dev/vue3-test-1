@@ -1,11 +1,25 @@
-// store actions with const
+// store actions (are asynchronous) with const
 
-export const addVisit = ({ commit, state }, obj) => {
+const addVisit = ({ commit, state }, obj) => {
   // eslint-disable-next-line
   console.log(state);
   commit('addVisit', obj.count);
 };
 
-export const resetVisit = ({ commit }) => {
+const resetVisit = ({ commit }) => {
   commit('setVisit', 0);
+};
+
+const addVisitAsync = ({ commit, state }, obj) => {
+  // eslint-disable-next-line
+  setTimeout(() => {
+    console.log(state);
+    commit('addVisit', obj.count);
+  }, 2000);
+};
+
+export default {
+  addVisit,
+  resetVisit,
+  addVisitAsync,
 };

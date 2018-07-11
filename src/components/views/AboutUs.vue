@@ -21,9 +21,9 @@ export default {
     };
   },
   created() {
-    // call store actions with object
+    // call an async store actions with object
     this.$store.dispatch({
-      type: 'addVisit',
+      type: 'addVisitAsync',
       count: 10,
     });
     // change the meta wuth the data property when the page is created
@@ -31,6 +31,11 @@ export default {
   },
   watch: {
     // watch for some injected object like $route
+    // on state change
+    $store() {
+      // call inner method
+      this.setPageTitle('-state');
+    },
   },
 };
 </script>
