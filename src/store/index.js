@@ -1,5 +1,6 @@
 /**
  * @examples: https://vuex.vuejs.org/guide/state.html
+ *            https://github.com/vuejs/vuex/tree/dev/examples
  */
 import 'es6-promise/auto';
 import Vue from 'vue';

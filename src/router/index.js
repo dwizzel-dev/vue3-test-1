@@ -31,12 +31,12 @@ const router = new VueRouter({
     },
     {
       path: '/about',
-      redirect: '/about-us', // redirest by path
+      redirect: '/about-us', // redirect by path
     },
     {
       path: '/aboutus',
       redirect: {
-        name: 'AboutUs', // redirest by route name
+        name: 'AboutUs', // redirect by route name
       },
     },
     {
@@ -45,7 +45,7 @@ const router = new VueRouter({
       children: [
         {
           path: ':username',
-          name: 'user',
+          name: 'User',
           component: ViewUser,
         },
       ],
@@ -55,8 +55,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (typeof to.meta.title !== 'undefined') {
+    // set a title if a meta in the router is defined
     document.title = to.meta.title;
   } else {
+    // put a loding because the component will set the title itself
     document.title = 'Loading...';
   }
   next();
