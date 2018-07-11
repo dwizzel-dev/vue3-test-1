@@ -11,9 +11,25 @@ const store = new Vuex.Store({
   state: {
     visits: 0,
   },
-  mutations: {
-    increment(state) {
+  mutations: { // synchronous change
+    incrementVisit: (state) => {
       state.visits += 1;
+    },
+    addVisit: (state, count) => {
+      state.visits += count;
+    },
+    setVisit: (state, count) => {
+      state.visits = count;
+    },
+  },
+  actions: { // asynchronous change
+    addVisit: ({ commit, state }, obj) => {
+      // eslint-disable-next-line
+      console.log(state);
+      commit('addVisit', obj.count);
+    },
+    resetVisit: ({ commit }) => {
+      commit('setVisit', 0);
     },
   },
   getters: {

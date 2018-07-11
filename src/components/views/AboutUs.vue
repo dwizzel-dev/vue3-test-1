@@ -21,7 +21,16 @@ export default {
     };
   },
   created() {
-    document.title = this.meta.title; // pass the meta via the creation mode
+    // call store actions with object
+    this.$store.dispatch({
+      type: 'addVisit',
+      count: 10,
+    });
+    // change the meta wuth the data property when the page is created
+    document.title = this.meta.title;
+  },
+  watch: {
+    // watch for some injected object like $route
   },
 };
 </script>

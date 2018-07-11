@@ -25,6 +25,9 @@ npm install es6-promise --save
 OR
 yarn add es6-promise
 
+#vue devtools for chrome
+https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd
+
 # vue init now works
 vue init webpack my-new-project
 

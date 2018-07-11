@@ -24,21 +24,26 @@ export default {
   },
   methods: {
     setPageTitle(args) {
-      this.$store.commit('increment');
+      // call store mutations
+      this.$store.commit('incrementVisit');
       // changes made via a property
       if (typeof this.$route.params.username !== 'undefined') {
+        // call store getters
         document.title = this.meta.title + this.$route.params.username + args + this.counter.replace('%d', this.$store.getters.getVisits);
       } else {
+        // call store getters
         document.title = this.meta.title + args + this.counter.replace('%d', this.$store.getters.getVisits);
       }
     },
   },
   created() {
-    // pass the meta via the creation mode
+    // on page created
     this.setPageTitle('-created');
   },
   watch: {
+    // on route change
     $route() {
+      // call inner method
       this.setPageTitle('-watch');
     },
   },

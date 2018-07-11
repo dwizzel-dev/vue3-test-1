@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <top-navigation></top-navigation>
+    <!-- changes made via the template with the data properties -->
     <h1>{{ title }}</h1>
   </div>
 </template>
@@ -16,6 +17,10 @@ export default {
     return {
       title: 'Welcome Home',
     };
+  },
+  created() {
+    // call store actions with payload
+    this.$store.dispatch('resetVisit');
   },
 };
 </script>
