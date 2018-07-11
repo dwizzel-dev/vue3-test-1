@@ -2,6 +2,30 @@
  * @examples: https://vuex.vuejs.org/guide/state.html
  *            https://github.com/vuejs/vuex/tree/dev/examples
  */
+
+// architecture approach
+import 'es6-promise/auto';
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+// with object instance approach
+import mutations from './mutations';
+import state from './state';
+import getters from './getters';
+// with const instance approach
+import * as actions from './actions';
+
+Vue.use(Vuex);
+
+export default new Vuex.Store({
+  state,
+  mutations,
+  getters,
+  actions,
+});
+
+/*
+// direct approach
 import 'es6-promise/auto';
 import Vue from 'vue';
 import Vuex from 'vuex';
@@ -39,3 +63,4 @@ const store = new Vuex.Store({
 });
 
 export default store;
+*/
