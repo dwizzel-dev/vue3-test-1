@@ -20,7 +20,7 @@ export default {
   },
   created() {
     // call store actions with payload
-    this.$store.dispatch('resetVisit');
+    this.$store.dispatch('counter/resetVisit');
   },
 };
 </script>

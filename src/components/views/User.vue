@@ -8,6 +8,7 @@
 
 <script>
 
+import { mapGetters } from 'vuex';
 import TopNavigation from '@/components/shared/TopNavigation';
 
 export default {
@@ -22,23 +23,31 @@ export default {
       },
     };
   },
-  methods: {
-    setPageTitle(args) {
-      // call store mutations
-      this.$store.commit('incrementVisit');
-      // changes made via a property
-      if (typeof this.$route.params.username !== 'undefined') {
-        // call store getters
-        document.title = this.meta.title + this.$route.params.username + args + this.counter.replace('%d', this.$store.getters.getVisits);
-      } else {
-        // call store getters
-        document.title = this.meta.title + args + this.counter.replace('%d', this.$store.getters.getVisits);
-      }
-    },
-  },
   created() {
     // on page created
     this.setPageTitle('-created');
+  },
+  computed: {
+    ...mapGetters('counter', {
+      visits: 'getVisits',
+    }),
+    routeParams() { // important: those cannot be arrow function because "this" will loose its scope
+      return this.$route.params;
+    },
+  },
+  methods: {
+    setPageTitle(args) {
+      // call store mutations
+      this.$store.commit('counter/incrementVisit');
+      // changes made via a property
+      if (typeof this.routeParams.username !== 'undefined') {
+        // call store getters
+        document.title = this.meta.title + this.routeParams.username + args + this.counter.replace('%d', this.visits);
+      } else {
+        // call store getters
+        document.title = this.meta.title + args + this.counter.replace('%d', this.visits);
+      }
+    },
   },
   watch: {
     // on route change

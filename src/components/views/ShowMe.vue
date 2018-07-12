@@ -20,7 +20,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters([
+    ...mapGetters('counter', [
       'getVisits',
     ]),
     fullStatus() { // important: those cannot be arrow function because "this" will loose its scope
@@ -29,7 +29,7 @@ export default {
     },
   },
   methods: {
-    ...mapActions([
+    ...mapActions('counter', [
       'addVisit',
     ]),
   },

@@ -23,7 +23,7 @@ export default {
   created() {
     // call an async store actions with object
     this.$store.dispatch({
-      type: 'addVisitAsync',
+      type: 'counter/addVisitAsync',
       count: 10,
     });
     // change the meta wuth the data property when the page is created
