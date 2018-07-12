@@ -8,7 +8,7 @@
 
 <script>
 
-import { mapGetters } from 'vuex';
+import { mapGetters, mapMutations } from 'vuex';
 import TopNavigation from '@/components/shared/TopNavigation';
 
 export default {
@@ -28,7 +28,7 @@ export default {
     this.setPageTitle('-created');
   },
   computed: {
-    ...mapGetters('counter', {
+    ...mapGetters('counter', { // on store counter 2
       visits: 'getVisits',
     }),
     routeParams() { // important: those cannot be arrow function because "this" will loose its scope
@@ -36,9 +36,13 @@ export default {
     },
   },
   methods: {
+    ...mapMutations('counter2', [ // on store counter 2
+      'incrementVisit',
+    ]),
     setPageTitle(args) {
       // call store mutations
-      this.$store.commit('counter/incrementVisit');
+      this.$store.commit('counter/incrementVisit'); // will call directly the counter 1
+      this.incrementVisit(); // will call the counter 2
       // changes made via a property
       if (typeof this.routeParams.username !== 'undefined') {
         // call store getters
