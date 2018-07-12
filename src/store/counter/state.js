@@ -2,4 +2,5 @@
 
 export default{
   visits: 0,
+  clicks: 0,
 };

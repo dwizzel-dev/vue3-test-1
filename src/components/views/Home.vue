@@ -19,7 +19,7 @@ export default {
     };
   },
   created() {
-    // call store actions with payload
+    // call store actions with payload and namespace
     this.$store.dispatch('counter/resetVisit');
   },
 };

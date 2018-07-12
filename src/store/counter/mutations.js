@@ -10,4 +10,7 @@ export default { // synchronous change
   setVisit: (state, count) => {
     state.visits = count;
   },
+  incrementClick: (state) => {
+    state.clicks += 1;
+  },
 };

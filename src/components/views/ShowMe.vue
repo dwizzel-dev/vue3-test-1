@@ -7,7 +7,7 @@
 
 <script>
 
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations, mapState } from 'vuex';
 import TopNavigation from '@/components/shared/TopNavigation';
 
 export default {
@@ -20,8 +20,12 @@ export default {
     };
   },
   computed: {
+    ...mapState('counter', {
+      clicks: state => state.clicks,
+    }),
     ...mapGetters('counter', [
       'getVisits',
+      'getClicks',
     ]),
     fullStatus() { // important: those cannot be arrow function because "this" will loose its scope
       const str = 'status: ';
@@ -32,11 +36,31 @@ export default {
     ...mapActions('counter', [
       'addVisit',
     ]),
+    ...mapMutations('counter', [
+      'incrementClick',
+    ]),
+  },
+  created() {
+    this.incrementClick();
+    document.title += this.clicks;
   },
   watch: {
-    getVisits() { // this observe the mutations of the getVisits from the vuex.$store
+    $routes() {
+      // later
+    },
+    // this observe the mutations of the getVisits
+    // from the vuex.$store initiated with namespace
+    getVisits() {
       // eslint-disable-next-line
       console.log('getVisits as Changed: ' + this.getVisits);
+    },
+    getClicks() {
+      // eslint-disable-next-line
+      console.log('store.counter.getClicks observer in ShowMe.vue: ' + this.clicks);
+    },
+    clicks() {
+      // eslint-disable-next-line
+      console.log('store.counter.click observer in ShowMe.vue: ' + this.clicks);
     },
   },
 };

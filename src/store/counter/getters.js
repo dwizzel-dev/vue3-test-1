@@ -8,4 +8,6 @@ export default {
 
 const getVisits = state => state.visits;
 
-export default { getVisits };
+const getClicks = state => state.clicks;
+
+export default { getVisits, getClicks };

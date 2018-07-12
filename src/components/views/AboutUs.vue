@@ -21,7 +21,7 @@ export default {
     };
   },
   created() {
-    // call an async store actions with object
+    // call an async store actions with object with namesoace in it
     this.$store.dispatch({
       type: 'counter/addVisitAsync',
       count: 10,

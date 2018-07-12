@@ -31,18 +31,18 @@ export default {
     ...mapGetters('counter', { // on store counter 2
       visits: 'getVisits',
     }),
+  },
+  methods: {
+    ...mapMutations('counter2', { // on store counter 2
+      incrementVisitCounter2: 'incrementVisit',
+    }),
     routeParams() { // important: those cannot be arrow function because "this" will loose its scope
       return this.$route.params;
     },
-  },
-  methods: {
-    ...mapMutations('counter2', [ // on store counter 2
-      'incrementVisit',
-    ]),
     setPageTitle(args) {
       // call store mutations
       this.$store.commit('counter/incrementVisit'); // will call directly the counter 1
-      this.incrementVisit(); // will call the counter 2
+      this.incrementVisitCounter2(); // will call the counter 2
       // changes made via a property
       if (typeof this.routeParams.username !== 'undefined') {
         // call store getters
