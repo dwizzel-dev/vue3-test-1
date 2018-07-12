@@ -15,6 +15,7 @@ const resetVisit = ({ commit }) => {
 const addVisitAsync = ({ commit, state }, obj) => {
   setTimeout(() => {
     // eslint-disable-next-line
+    console.log('store.counter.addVisitAsync arrived');
     console.log(state);
     // call the mutations methods
     commit('addVisit', obj.count);

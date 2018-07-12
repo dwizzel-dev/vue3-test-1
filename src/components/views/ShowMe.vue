@@ -1,7 +1,10 @@
 <template>
   <div class="about-us">
     <top-navigation></top-navigation>
-    <h1>{{h1}} {{getVisits}} {{fullStatus}}</h1>
+    <h1>{{h1}}</h1>
+    <h3>getVisits: {{getVisits}}</h3>
+    <h3>fullStatus(): {{fullStatus}}</h3>
+    <h3>clicks: {{clicks}}</h3>
   </div>
 </template>
 
@@ -42,7 +45,6 @@ export default {
   },
   created() {
     this.incrementClick();
-    document.title += this.clicks;
   },
   watch: {
     $routes() {
@@ -52,15 +54,15 @@ export default {
     // from the vuex.$store initiated with namespace
     getVisits() {
       // eslint-disable-next-line
-      console.log('getVisits as Changed: ' + this.getVisits);
+      console.log('store.counter.getVisits via mapGetters observer: ' + this.getVisits);
     },
     getClicks() {
       // eslint-disable-next-line
-      console.log('store.counter.getClicks observer in ShowMe.vue: ' + this.clicks);
+      console.log('store.counter.getClicks via mapGetters observer: ' + this.clicks);
     },
     clicks() {
       // eslint-disable-next-line
-      console.log('store.counter.click observer in ShowMe.vue: ' + this.clicks);
+      console.log('store.counter.clicks via mapState observer in ShowMe.vue: ' + this.clicks);
     },
   },
 };
