@@ -33,11 +33,9 @@ export default {
       if (status) {
         this.button.text = 'Logout';
         this.button.style = 'out';
-        // this.button.action = 'doLogout';
       } else {
         this.button.text = 'Login';
         this.button.style = 'in';
-        // this.button.action = 'doLogin';
       }
     },
     doLogin() {

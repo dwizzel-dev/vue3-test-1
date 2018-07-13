@@ -1,11 +1,18 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+
+
 import Vue from 'vue';
 import App from './App';
 import router from './router';
 import store from './store';
 
-Vue.config.productionTip = false;
+import auth from './functions/auth';
+
+// adding auth globally to vue
+Vue.prototype.$auth = auth;
+
+Vue.config.productionTip = true;
 
 /* eslint-disable no-new */
 new Vue({
@@ -14,4 +21,5 @@ new Vue({
   store,
   components: { App },
   template: '<App/>',
+  // mixins: [AuthFunc],
 });

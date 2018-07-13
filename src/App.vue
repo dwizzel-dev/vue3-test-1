@@ -31,7 +31,7 @@ export default {
   color: #000;
   padding: 0;
   margin: 0 auto;
-  width: 520px;
+  width: 640px;
 }
 /* containers */
 .container-outer{

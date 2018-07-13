@@ -6,6 +6,7 @@
         <li><router-link to="/about-us">About Us</router-link></li>
         <li><router-link to="/user">User</router-link></li>
         <li><router-link to="/show-me">Show Me</router-link></li>
+        <li><router-link to="/func-test">Func Test</router-link></li>
         <li class="login"><auth-button/></li>
       </ul>
     </nav>

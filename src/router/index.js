@@ -8,6 +8,7 @@ import ViewHome from '@/components/views/Home';
 import ViewAboutUs from '@/components/views/AboutUs';
 import ViewUser from '@/components/views/User';
 import ViewShowMe from '@/components/views/ShowMe';
+import ViewFuncTest from '@/components/views/FuncTest';
 
 Vue.use(VueRouter);
 
@@ -59,6 +60,11 @@ const router = new VueRouter({
         title: 'Show Me',
         description: 'show me page description',
       },
+    },
+    {
+      path: '/func-test',
+      name: 'Func',
+      component: ViewFuncTest,
     },
   ],
 });
