@@ -34,20 +34,17 @@ export default {
     ...mapMutations('counter2', { // on store counter 2
       incrementVisitCounter2: 'incrementVisit',
     }),
-    routeParams() { // important: those cannot be arrow function because "this" will loose its scope
-      return this.$route.params;
-    },
     setPageTitle(args) {
       // call store mutations
       this.$store.commit('counter/incrementVisit'); // will call directly the counter 1
       this.incrementVisitCounter2(); // will call the counter 2
       // changes made via a property
-      if (typeof this.routeParams.username !== 'undefined') {
+      if (typeof this.$route.params.username !== 'undefined') {
         // call store getters
-        document.title = this.meta.title + this.routeParams.username + args + this.counter.replace('%d', this.visits);
+        document.title = `${this.meta.title} ${this.$route.params.username} ${args} ${this.counter.replace('%d', this.visits)}`;
       } else {
         // call store getters
-        document.title = this.meta.title + args + this.counter.replace('%d', this.visits);
+        document.title = `${this.meta.title} ${args} ${this.counter.replace('%d', this.visits)}`;
       }
     },
   },

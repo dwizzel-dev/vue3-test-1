@@ -52,15 +52,15 @@ export default {
     // from the vuex.$store initiated with namespace
     getVisits() {
       // eslint-disable-next-line
-      console.log('store.counter.getVisits via mapGetters observer: ' + this.getVisits);
+      this.$logger.log('store.counter.getVisits via mapGetters observer: ' + this.getVisits);
     },
     getClicks() {
       // eslint-disable-next-line
-      console.log('store.counter.getClicks via mapGetters observer: ' + this.clicks);
+      this.$logger.log('store.counter.getClicks via mapGetters observer: ' + this.clicks);
     },
     clicks() {
       // eslint-disable-next-line
-      console.log('store.counter.clicks via mapState observer in ShowMe.vue: ' + this.clicks);
+      this.$logger.log('store.counter.clicks via mapState observer in ShowMe.vue: ' + this.clicks);
     },
   },
 };

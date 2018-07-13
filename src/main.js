@@ -8,9 +8,12 @@ import router from './router';
 import store from './store';
 
 import auth from './functions/auth';
+import logger from './plugins/logger';
 
-// adding auth globally to vue
+// adding custim functions auth globally to vue
 Vue.prototype.$auth = auth;
+// adding custim plugins
+Vue.use(logger);
 
 Vue.config.productionTip = true;
 

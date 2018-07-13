@@ -9,9 +9,9 @@ import ViewAboutUs from '@/components/views/AboutUs';
 import ViewUser from '@/components/views/User';
 import ViewShowMe from '@/components/views/ShowMe';
 import ViewFuncTest from '@/components/views/FuncTest';
+import ViewPluginTestJS from '@/components/views/PluginTestJS';
 
 Vue.use(VueRouter);
-
 
 const router = new VueRouter({
   linkExactActiveClass: 'isExactActive', // the class to aplly when active
@@ -58,13 +58,23 @@ const router = new VueRouter({
       component: ViewShowMe,
       meta: { // pass the meta via the router
         title: 'Show Me',
-        description: 'show me page description',
       },
     },
     {
       path: '/func-test',
       name: 'Func',
       component: ViewFuncTest,
+      meta: { // pass the meta via the router
+        title: 'Func Test Me',
+      },
+    },
+    {
+      path: '/plugin-test-js',
+      name: 'Plugin-JS',
+      component: ViewPluginTestJS,
+      meta: { // pass the meta via the router
+        title: 'Plugin Test Me',
+      },
     },
   ],
 });

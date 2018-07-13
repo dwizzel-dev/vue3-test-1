@@ -5,7 +5,6 @@
 <script>
 
 import { mapGetters, mapMutations } from 'vuex';
-// import { mapGetters } from 'vuex';
 
 export default {
   name: 'AuthButton',
@@ -56,6 +55,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+button{
+  min-width: 80px;
+  text-align: center;
+  }
 button.in{
   color: #fff;
   background: rgb(0, 98, 255);

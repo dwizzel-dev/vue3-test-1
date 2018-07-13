@@ -1,13 +1,12 @@
-/* custom funtions */
+/* custom funtions test */
 
 function Auth() {
+  this.name = 'Auth';
   this.Auth = () => {
-    // eslint-disable-next-line
-    console.log('AuthFunc.constructor()');
+    console.log(`${this.name}.constructor()`);
   };
   this.doServerLogin = () => {
-    // eslint-disable-next-line
-    console.log('Do Server Login');
+    console.log(`${this.name}.doServerLogin()`);
   };
 }
 

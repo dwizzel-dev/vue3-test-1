@@ -2,11 +2,9 @@
   <div class="top-navigation">
     <nav>
       <ul>
-        <li><router-link to="/" exact>Home</router-link></li>
-        <li><router-link to="/about-us">About Us</router-link></li>
-        <li><router-link to="/user">User</router-link></li>
-        <li><router-link to="/show-me">Show Me</router-link></li>
-        <li><router-link to="/func-test">Func Test</router-link></li>
+        <li v-for="(item, index) in menu" :key="index">
+          <router-link :to="'/' + item[0]" exact>{{item[1]}}</router-link>
+        </li>
         <li class="login"><auth-button/></li>
       </ul>
     </nav>
@@ -17,15 +15,26 @@
 
 import AuthButton from '@/components/shared/AuthButton';
 
+const routes = [
+  ['', 'Home'],
+  ['about-us', 'Async'],
+  ['user', 'User'],
+  ['show-me', 'Show Me'],
+  ['func-test', 'Func'],
+  ['plugin-test-js', 'Plugin'],
+];
+
+
 export default {
   name: 'TopNavigation',
   components: { AuthButton },
   data() {
     return {
-      //
+      menu: routes,
     };
   },
 };
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -59,7 +68,7 @@ li:last-child{
 }
 li.login{
   float:right;
-  margin: 0 10px 0 0;
+  margin: 0;
 }
 A.isActive{
   color:#fff;
