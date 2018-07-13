@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <top-navigation></top-navigation>
     <!-- changes made via the template with the data properties -->
     <h1>{{ title }}</h1>
   </div>
@@ -8,11 +7,9 @@
 
 <script>
 
-import TopNavigation from '@/components/shared/TopNavigation';
-
 export default {
   name: 'Home',
-  components: { TopNavigation },
+  components: {},
   data() {
     return {
       title: 'Welcome Home',

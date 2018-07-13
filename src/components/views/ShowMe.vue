@@ -1,6 +1,5 @@
 <template>
   <div class="about-us">
-    <top-navigation></top-navigation>
     <h1>{{h1}}</h1>
     <h3>getVisits: {{getVisits}}</h3>
     <h3>fullStatus(): {{fullStatus}}</h3>
@@ -11,11 +10,10 @@
 <script>
 
 import { mapGetters, mapActions, mapMutations, mapState } from 'vuex';
-import TopNavigation from '@/components/shared/TopNavigation';
 
 export default {
   name: 'ShowMe',
-  components: { TopNavigation },
+  components: {},
   data() {
     return {
       h1: 'Show Me',

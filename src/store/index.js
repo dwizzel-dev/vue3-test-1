@@ -12,6 +12,7 @@ import Vuex from 'vuex';
 // with object instance approach
 import counter from './counter';
 import counter2 from './counter2';
+import auth from './auth';
 
 Vue.use(Vuex);
 
@@ -19,5 +20,6 @@ export default new Vuex.Store({
   modules: {
     counter,
     counter2,
+    auth,
   },
 });

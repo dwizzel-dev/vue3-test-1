@@ -1,6 +1,5 @@
 <template>
   <div class="user">
-    <top-navigation></top-navigation>
     <!-- changes made via the template -->
     <h1>{{meta.title}} {{$route.params.username}}</h1>
   </div>
@@ -9,11 +8,10 @@
 <script>
 
 import { mapGetters, mapMutations } from 'vuex';
-import TopNavigation from '@/components/shared/TopNavigation';
 
 export default {
   name: 'User',
-  components: { TopNavigation },
+  components: {},
   data() {
     return {
       counter: ' (%d)',
