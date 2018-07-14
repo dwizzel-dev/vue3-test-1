@@ -4,79 +4,14 @@
 
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import ViewHome from '@/components/views/Home';
-import ViewAboutUs from '@/components/views/AboutUs';
-import ViewUser from '@/components/views/User';
-import ViewShowMe from '@/components/views/ShowMe';
-import ViewFuncTest from '@/components/views/FuncTest';
-import ViewPluginTestJS from '@/components/views/PluginTestJS';
+import routing from './routes';
 
 Vue.use(VueRouter);
 
 const router = new VueRouter({
   linkExactActiveClass: 'isExactActive', // the class to aplly when active
   linkActiveClass: 'isActive', // the class to aplly when active and exact
-  routes: [
-    {
-      path: '',
-      name: 'Home',
-      component: ViewHome,
-      meta: { // pass the meta via the router
-        title: 'Home',
-        description: 'home page description',
-      },
-    },
-    {
-      path: '/about-us',
-      name: 'AboutUs',
-      component: ViewAboutUs,
-    },
-    {
-      path: '/about',
-      redirect: '/about-us', // redirect by path
-    },
-    {
-      path: '/aboutus',
-      redirect: {
-        name: 'AboutUs', // redirect by route name
-      },
-    },
-    {
-      path: '/user', // with dynamic link
-      component: ViewUser,
-      children: [
-        {
-          path: ':username',
-          name: 'User',
-          component: ViewUser,
-        },
-      ],
-    },
-    {
-      path: '/show-me',
-      name: 'ShowMe',
-      component: ViewShowMe,
-      meta: { // pass the meta via the router
-        title: 'Show Me',
-      },
-    },
-    {
-      path: '/func-test',
-      name: 'Func',
-      component: ViewFuncTest,
-      meta: { // pass the meta via the router
-        title: 'Func Test Me',
-      },
-    },
-    {
-      path: '/plugin-test-js',
-      name: 'Plugin-JS',
-      component: ViewPluginTestJS,
-      meta: { // pass the meta via the router
-        title: 'Plugin Test Me',
-      },
-    },
-  ],
+  routes: routing,
 });
 
 router.beforeEach((to, from, next) => {

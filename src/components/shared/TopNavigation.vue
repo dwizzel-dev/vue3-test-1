@@ -24,7 +24,6 @@ const routes = [
   ['plugin-test-js', 'Plugin'],
 ];
 
-
 export default {
   name: 'TopNavigation',
   components: { AuthButton },
